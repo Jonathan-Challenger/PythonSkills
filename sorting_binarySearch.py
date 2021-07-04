@@ -103,4 +103,40 @@ def binary_search(seq, target):
 
 print(binary_search(sortedd, 5))
 
+# BINARY SEARCH WITH ROTATED LIST
 
+def bin_search_rot(seq, target):
+    if len(nums) == 0:
+            return -1
+        
+    left, right = 0, len(nums) - 1
+    
+    # Loop finds the index of the smallest element in array (left)
+    while left < right:
+        mid = left + (right - left) // 2
+        if nums[mid] > nums[right]:
+            left = mid + 1
+        else:
+            right = mid
+    
+    # Initialise start to the index of smallest element   
+    start = left
+    # Reset boundaries for regular binary search
+    left, right = 0, len(nums) - 1
+    
+    # Decide which side of the smallest element to do binary seach on
+    if target >= nums[start] and target <= nums[right]:
+        left = start
+    else:
+        right = start
+    
+    # Regular binary search
+    while left <= right:
+        mid = left + (right - left) // 2
+        if nums[mid] == target:
+            return mid
+        elif nums[mid] < target:
+            left = mid + 1
+        else:
+            right = mid - 1
+    return -1
