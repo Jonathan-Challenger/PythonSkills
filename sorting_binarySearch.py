@@ -104,6 +104,8 @@ def binary_search(seq, target):
 print(binary_search(sortedd, 5))
 
 # BINARY SEARCH WITH ROTATED LIST
+arr = [4, 5, 6, 7, 0, 1, 2, 3]
+
 
 def bin_search_rot(seq, target):
     if len(nums) == 0:
@@ -140,3 +142,5 @@ def bin_search_rot(seq, target):
         else:
             right = mid - 1
     return -1
+
+    print(bin_search_rot(arr, 5))
