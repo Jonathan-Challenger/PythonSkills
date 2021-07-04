@@ -126,7 +126,7 @@ def bin_search_rot(seq, target):
     # Reset boundaries for regular binary search
     left, right = 0, len(seq) - 1
     
-    # Decide which side of the smallest element to do binary seach on
+    # Decide which side of the smallest element to do binary search on
     if target >= seq[start] and target <= seq[right]:
         left = start
     else:
