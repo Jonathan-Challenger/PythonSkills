@@ -144,3 +144,26 @@ def bin_search_rot(seq, target):
     return -1
 
 print(bin_search_rot(li, 5))
+
+
+# BINARY SEARCH USING RECURSION
+# Instead of using while loop call the function recursively with new values
+arr = [0, 7, 6, 4, 9, 3, 7, 3, 2, 5, 1, 9, 2]
+sortedd = quick_sort(arr)
+
+def binary_search_rec(seq, l, r, target):
+    if l > r:
+        return -1
+
+    mid = l + (r - l) // 2
+    if target == seq[mid]:
+        return mid
+    elif target < seq[mid]:
+        return binary_search_rec(seq, l, mid - 1, target)
+    else:
+        return binary_search_rec(seq, mid + 1, r, target)
+
+l = 0
+r = len(sortedd) - 1
+
+print(binary_search_rec(sortedd, l, r, 5))
