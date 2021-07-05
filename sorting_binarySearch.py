@@ -1,7 +1,7 @@
 arr = [0, 7, 6, 4, 9, 3, 7, 3, 2, 5, 1, 9, 2]
 
 
-# INSERTION SORT
+# INSERTION SORT (O(n**2))
 
 def insertion_sort(seq):
     for i in range(1, len(seq)):
@@ -12,7 +12,6 @@ def insertion_sort(seq):
             i -= 1
 
     return seq
-
 
 print(insertion_sort(arr))
 
@@ -41,7 +40,7 @@ def quick_sort(seq):
 
 print(quick_sort(arr))
 
-# BUBBLE SORT
+# BUBBLE SORT (O(n**2))
 arr = [0, 7, 6, 4, 9, 3, 7, 3, 2, 5, 1, 9, 2]
 
 
@@ -58,7 +57,6 @@ def bubble_sort(seq):
                 seq[i], seq[i + 1] = seq[i + 1], seq[i]
 
     return seq
-
 
 print(bubble_sort(arr))
 
@@ -144,7 +142,6 @@ def bin_search_rot(seq, target):
     return -1
 
 print(bin_search_rot(li, 5))
-
 
 # BINARY SEARCH USING RECURSION
 # Instead of using while loop call the function recursively with new values
