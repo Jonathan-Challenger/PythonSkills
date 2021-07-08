@@ -1,9 +1,9 @@
 def even_digits(arr):
-    count = 0
     lens = []
-
-    for i in range(len(arr)):
-        lens.append(len(str(i)))
+    count = 0
+    for i in arr:
+        l = len(str(i))
+        lens.append(l)
     for n in lens:
         if n % 2 == 0:
             count += 1
