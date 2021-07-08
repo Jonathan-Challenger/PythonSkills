@@ -24,4 +24,4 @@ def duplicateZeros(arr):
     return arr
 
 
-print(duplicateZeros([2, 0, 3, 4, 0, 3, 0]))
+print(duplicateZeros([2, 0, 3, 4, 0, 3, 0, 3, 2, 1, 0]))
