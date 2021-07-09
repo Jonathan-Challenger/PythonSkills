@@ -1,4 +1,4 @@
-nums = [2, 3, 3, 4, 5, 2, 3, 9]
+nums = [1, 1, 2, 3, 4, 4, 4, 5, 6, 6]
 
 def removeDuplicates(arr):
     if len(arr) == 0:
