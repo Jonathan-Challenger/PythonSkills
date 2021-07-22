@@ -43,12 +43,15 @@ class LinkedList():
     # Function that prints all the values in the linkedlist
     def print_list(self):
         print("Printing list..........")
+        # Print nothing if list is empty
         if self.head is None:
             return
+        # Print head value
         current = self.head
         print(current.to_string())
+        # Loop through the list printing the values for each node
         while current.has_next():
-            current = current.get_next()
+            current = current.next
             print(current.to_string())
         print("Finished printing")
 
@@ -59,38 +62,72 @@ class LinkedList():
         self.head = new_start
 
     def insert_last(self, value):
+        # If there is no head Node then new node becomes the head
         new_last = Node(value)
         if self.head is None:
             self.head = new_last
             return
 
+        # Loop to the end of the list
         current = self.head
         while current.has_next():
             current = current.next
         
+        # Assign the next item at the end of the list to the new Node
         current.next = new_last
+
+    def insert(self, position, value):
+        new_node = Node(value)
+
+        # Case when position is start of the list
+        if position == 1:
+            new_node.next = self.head
+            self.head = new_node
+        else:
+            previous = self.head
+            count = 1 # Position - 1
+
+            # Loop to node before where we want to insert
+            while count < position - 1:
+                previous = previous.next
+                count += 1
+
+            # Assign current node 
+            current = previous.next
+            # Node to insert comes after the previous
+            previous.next = new_node
+            # Assign current node to the new nodes next
+            new_node.next = current
+        
+
 
 
 # Instatiate LinkedList and Nodes containing integer values
 myList = LinkedList()
-second = Node(8)
-third = Node(6)
-fourth = Node(4)
-fifth = Node(2)
+# second = Node(8)
+# third = Node(6)
+# fourth = Node(4)
+# fifth = Node(2)
 
 # Add nodes to linked list in order
-myList.head = Node(10)
-myList.head.next = second
-second.next = third
-third.next = fourth
-fourth.next = fifth
+# myList.head = Node(10)
+# myList.head.next = second
+# second.next = third
+# third.next = fourth
+# fourth.next = fifth
+
+# Create LinkedList using insert function
+myList.insert(1, 12)
+myList.insert(2, 10)
+myList.insert(3, 8)
+myList.insert(4, 6)
+myList.insert(5, 4)
 
 # Print all elements in the LinkedList
 
 myList.print_list()
 
 # Insert new element at the start of the list
-
-myList.insert_end(1)
+myList.insert_start(14)
 
 myList.print_list()
