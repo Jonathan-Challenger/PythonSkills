@@ -98,8 +98,31 @@ class LinkedList():
             previous.next = new_node
             # Assign current node to the new nodes next
             new_node.next = current
-        
+    
+    # Delete functions
+    def delete_start(self):
+        if self.head is None:
+            return None
 
+        temp = self.head
+        self.head = self.head.next
+        temp.next = None
+
+    def delete_last(self):
+        if self.head is None or self.head.next is None:
+            return self.head
+        
+        current = self.head
+        previous = None
+
+        # Loop through the linked list until the end
+        while current.has_next():
+            previous = current
+            current = current.next
+        
+        # Breaks link between second last and last node
+        previous.next = None
+        return current
 
 
 # Instatiate LinkedList and Nodes containing integer values
@@ -129,5 +152,13 @@ myList.print_list()
 
 # Insert new element at the start of the list
 myList.insert_start(14)
+
+myList.print_list()
+
+myList.delete_start()
+
+myList.print_list()
+
+myList.delete_last()
 
 myList.print_list()
