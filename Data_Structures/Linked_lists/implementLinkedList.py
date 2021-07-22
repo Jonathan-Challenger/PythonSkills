@@ -52,6 +52,12 @@ class LinkedList():
             print(current.to_string())
         print("Finished printing")
 
+    def insert_start(self, value):
+        new_start = Node(value)
+        new_start.next = self.head
+        self.head = new_start
+
+
 
 # Instatiate LinkedList and Nodes containing integer values
 myList = LinkedList()
@@ -68,5 +74,9 @@ third.next = fourth
 fourth.next = fifth
 
 # Print all elements in the LinkedList
+
+myList.print_list()
+
+myList.insert_start(12)
 
 myList.print_list()
