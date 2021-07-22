@@ -124,6 +124,23 @@ class LinkedList():
         previous.next = None
         return current
 
+    def delete(self, position):
+        if position == 1:
+            self.head = self.head.next
+        else:
+            previous = self.head
+            count = 1
+
+            # Loop through to find position of node before target node
+            while count < position - 1:
+                previous = previous.next
+                count += 1
+            
+            # Assign target node to current and skip its connection
+            current = previous.next
+            previous.next = current.next
+
+
 
 # Instatiate LinkedList and Nodes containing integer values
 myList = LinkedList()
@@ -160,5 +177,9 @@ myList.delete_start()
 myList.print_list()
 
 myList.delete_last()
+
+myList.print_list()
+
+myList.delete(2)
 
 myList.print_list()
