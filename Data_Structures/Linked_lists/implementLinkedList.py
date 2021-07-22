@@ -52,11 +52,23 @@ class LinkedList():
             print(current.to_string())
         print("Finished printing")
 
+    # Inserting functions
     def insert_start(self, value):
         new_start = Node(value)
         new_start.next = self.head
         self.head = new_start
 
+    def insert_last(self, value):
+        new_last = Node(value)
+        if self.head is None:
+            self.head = new_last
+            return
+
+        current = self.head
+        while current.has_next():
+            current = current.next
+        
+        current.next = new_last
 
 
 # Instatiate LinkedList and Nodes containing integer values
@@ -77,6 +89,8 @@ fourth.next = fifth
 
 myList.print_list()
 
-myList.insert_start(12)
+# Insert new element at the start of the list
+
+myList.insert_end(1)
 
 myList.print_list()
