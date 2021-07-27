@@ -140,6 +140,7 @@ class LinkedList():
             current = previous.next
             previous.next = current.next
 
+    # Function finds the length of the linked list
     def size(self):
         current = self.head
         count = 0
