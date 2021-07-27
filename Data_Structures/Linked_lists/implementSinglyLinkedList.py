@@ -140,6 +140,14 @@ class LinkedList():
             current = previous.next
             previous.next = current.next
 
+    def size(self):
+        current = self.head
+        count = 0
+        while current:
+            count += 1
+            current = current.next
+        return count
+
 
 
 # Instatiate LinkedList and Nodes containing integer values
@@ -183,3 +191,5 @@ myList.print_list()
 myList.delete(2)
 
 myList.print_list()
+
+print(myList.size())
