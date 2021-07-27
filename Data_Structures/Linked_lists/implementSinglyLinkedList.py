@@ -147,7 +147,23 @@ class LinkedList():
         while current:
             count += 1
             current = current.next
-        return count
+        return "Length: " + str(count)
+
+    # Function to find element
+    def find(self, key):
+        if self.head == None:
+            return False
+        
+        ind = 0
+        current = self.head
+        while current:
+            if current.data == key:
+                return f"Item found at index: {ind}"
+            current = current.next 
+            ind += 1
+        return "Items not in list"
+
+
 
 
 
@@ -194,3 +210,5 @@ myList.delete(2)
 myList.print_list()
 
 print(myList.size())
+
+print(myList.find(12))
